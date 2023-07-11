@@ -1,5 +1,7 @@
 package com.rkouchoo.apts;
 
+import java.util.Date;
+
 public class constants {
 	
 	/* 
@@ -18,6 +20,7 @@ public class constants {
 					"2009-005A"
 			};
 	
-	
+	public static Date currentDate = new Date();
+	public static String LATEST_TLE_NAME = String.format("%f_TLE.json", currentDate.getTime());  
 	
 }
