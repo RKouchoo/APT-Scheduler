@@ -1,0 +1,23 @@
+
+              Hipparchus 2.3 RELEASE NOTES
+
+The Hipparchus team is pleased to announce the release of hipparchus-2.3
+
+The Hipparchus library is a library of mathematical components. It started as a fork of Apache Commons Math.
+
+Changes in this version include:
+
+New features:
+o issues/205:  Added new signature for SequentialGaussNewtonOptimizer#withAPrioriData allowing
+               to define the Cholesky decomposition thresholds. 
+o issues/204:  Changed HessenbergTransformer visibility to public. 
+o issues/204:  Changed SchurTransformer visibility to public. 
+
+Fixed Bugs:
+o issues/208:  Fixed wrong negation of point on the 2-sphere. 
+o issues/207:  Allow configuration of RandomPercentile in StreamingStatistics. 
+
+For complete information on Hipparchus, including instructions on how to submit bug reports,
+patches, or suggestions for improvement, see the Hipparchus website:
+
+https://www.hipparchus.org/

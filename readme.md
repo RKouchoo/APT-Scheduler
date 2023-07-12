@@ -14,3 +14,9 @@ Complied as a Jar file - will allow it to be run on ARMHF and other devices you 
 - Determine OS version, run correct binaries
 - Doppler shift (need to see how possible this is with RTL-SDR drivers) 
 - Maybe hook onto GQRX native libs
+
+
+jazz-2t6hFx domain
+Loft3x!@? vh
+
+setup the firewall so it just stays within australia
