@@ -10,7 +10,7 @@ import java.nio.file.StandardCopyOption;
 
 public class TLEHandler {
 
-	private TLEInterpreter interpreter;
+	private DEP_TLEInterpreter interpreter;
 	private static String latestTLEName = ATPSConstants.LATEST_TLE_NAME; // keep track of the latest tle file name when init, we need it later.
 	// need to implement a string to be able to ref a previously cached tle file
 	

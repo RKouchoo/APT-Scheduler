@@ -67,12 +67,6 @@ public class PassCalculator {
             System.out.println("Failed to retrieve TLE data: " + e.getMessage());
         }
     }
-
-    
-    
-    
-    
-    
     
     private static String[] retrieveTLEData(String tleUrl) throws IOException {
         StringBuilder tleData = new StringBuilder();
@@ -118,7 +112,7 @@ public class PassCalculator {
         // Iterate over the time range and predict the satellite pass
         while (currentTime.isBefore(endTime)) {
             // Convert the current time to Orekit's AbsoluteDate
-            AbsoluteDate currentDate = AbsoluteDate.ofInstant(currentTime, TimeScalesFactory.getUTC());
+            AbsoluteDate currentDate = AbsoluteDate..ofInstant(currentTime, TimeScalesFactory.getUTC());
 
             // Propagate the satellite state to the current time
             SpacecraftState state = propagator.propagate(currentDate);

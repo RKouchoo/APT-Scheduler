@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
  * TLE representation to aid SGP4 calculations. Instances of this class are
  * immutable and thus thread safe.
  */
-public class TLEInterpreter implements Serializable {
+public class DEP_TLEInterpreter implements Serializable {
 
     private static final long serialVersionUID = 716922882884628016L;
 
@@ -59,7 +59,7 @@ public class TLEInterpreter implements Serializable {
      *
      * @param tle
      */
-    public TLEInterpreter(final TLEInterpreter tle) {
+    public DEP_TLEInterpreter(final DEP_TLEInterpreter tle) {
         this.catnum = tle.catnum;
         this.name = tle.name;
         this.setnum = tle.setnum;
@@ -92,7 +92,7 @@ public class TLEInterpreter implements Serializable {
      * @param tle the three line elements
      * @throws IllegalArgumentException here was something wrong with the TLE
      */
-    public TLEInterpreter(final String[] tle) throws IllegalArgumentException {
+    public DEP_TLEInterpreter(final String[] tle) throws IllegalArgumentException {
         {
             if (null == tle) {
                 throw new IllegalArgumentException("TLE was null");
@@ -389,9 +389,9 @@ public class TLEInterpreter implements Serializable {
         return "TLE line[" + lineCount + "] " + problem;
     }
 
-    public static List<TLEInterpreter> importSat(final InputStream fileIS)
+    public static List<DEP_TLEInterpreter> importSat(final InputStream fileIS)
             throws IOException {
-        final List<TLEInterpreter> importedSats = new ArrayList<TLEInterpreter>();
+        final List<DEP_TLEInterpreter> importedSats = new ArrayList<DEP_TLEInterpreter>();
 
         final BufferedReader buf = new BufferedReader(new InputStreamReader(
                 fileIS, Charset.forName("UTF-8")));
@@ -412,7 +412,7 @@ public class TLEInterpreter implements Serializable {
                 case 2:
                     lines[j] = readString;
                     j = 0;
-                    importedSats.add(new TLEInterpreter(lines));
+                    importedSats.add(new DEP_TLEInterpreter(lines));
                     break;
                 default:
                     break;
