@@ -11,7 +11,9 @@ public class ATPSConstants {
 	public static double LAT = 33.9168;
 	public static double LONG = 150.9830;
 
-	public static String TLE_NETWORK_ADDRESS = "https://celestrak.org/NORAD/elements/gp.php?GROUP=noaa&FORMAT=json-pretty";
+	public static String TLE_NETWORK_ADDRESS = "https://celestrak.org/NORAD/elements/gp.php?GROUP=noaa&FORMAT=csv";
+	public static String TLE_NETWORK_OMM_ADDRESS = "https://celestrak.org/NORAD/elements/gp.php?GROUP=noaa&FORMAT=OMM";
+	public static String ORE_DATA_PATH = "./orekit";
 	
 	public static String[] NOAA_SAT_IDENTIFIERS =
 			{
@@ -21,6 +23,5 @@ public class ATPSConstants {
 			};
 	
 	public static Date currentDate = new Date();
-	public static String LATEST_TLE_NAME = String.format("%f_TLE.json", currentDate.getTime());  
 	
 }

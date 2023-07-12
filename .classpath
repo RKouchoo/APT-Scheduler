@@ -33,6 +33,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Regan/projects/APT-Scheduler/lib/orekit-11.3.3.jar">
 		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Regan/projects/APT-Scheduler/lib/orekit-11.3.3-javadoc.jar!/"/>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>

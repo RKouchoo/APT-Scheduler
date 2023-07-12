@@ -1,32 +1,71 @@
 package com.rkouchoo.apts;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+
+import org.orekit.data.DataContext;
+import org.orekit.files.ccsds.ndm.odm.omm.Omm;
+import org.orekit.utils.IERSConventions;
+
+import com.github.amsacode.predict4java.TLE;
 
 public class TLEHandler {
-
+	
+/*
 	private DEP_TLEInterpreter interpreter;
 	private static String latestTLEName = ATPSConstants.LATEST_TLE_NAME; // keep track of the latest tle file name when init, we need it later.
 	// need to implement a string to be able to ref a previously cached tle file
+*/
 	
-	private void getLatestTLE(String tleDownload) throws MalformedURLException, IOException {
-		InputStream in = new URL(tleDownload).openStream();
-		Files.copy(in, Paths.get(latestTLEName), StandardCopyOption.REPLACE_EXISTING);
-	}
-	
-	
-	public void predictNextPasses(String sat, InputStream TLE, int passAmount, long lat, long longn) throws IOException {
-		interpreter.importSat(TLE);
+    public static String[] retrieveTLEData(String tleUrl) throws IOException {
+        StringBuilder tleData = new StringBuilder();
 
-		
-		
-	}
+        // Read TLE data from the provided URL
+        URL url = new URL(tleUrl);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            tleData.append(line).append("\n");
+        }
+        reader.close();
 
+        // Split the TLE data into separate lines
+        String[] tleLines = tleData.toString().split("\n");
+
+        return tleLines;
+    }
+    
+
+    
+    // download an OMM html file and return a TLE object
+    public static TLE getTLEFromOMM(String tleOmmUrl) throws MalformedURLException, IOException {
+        StringBuilder tleData = new StringBuilder();
+
+        // Read TLE data from the provided URL
+        URL url = new URL(tleOmmUrl);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+        String line;
+        
+        while ((line = reader.readLine()) != null) {
+            tleData.append(line).append("\n");
+        }
+      
+        reader.close();
+    	
+    	String OMMXML = tleData.toString();
+    	
+    	Omm omm = new Omm(OMMXML, IERSConventions.IERS_2010, );
+    	omm.generateTLE();
+    	
+    	
+    	
+    	return null;
+    }
+    
+    
 }
 
 
