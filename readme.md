@@ -1,4 +1,8 @@
-# APT-Scheduler 
+
+# Project has been cancelled
+# No-longer doing APT reception due to static sat dish
+
+## APT-Scheduler 
 A small project to schedule APT reception on my home weatherstation
 Other instances such as https://github.com/jekhokie/raspberry-noaa-v2 exist but are only compatible with certain devices and trying to hack their implementation causes more problems than fixes.
 This has been developed to work on an OPI5 & RPI 4

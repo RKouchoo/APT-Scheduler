@@ -57,8 +57,8 @@ public class TLEHandler {
     	
     	String OMMXML = tleData.toString();
     	
-    	Omm omm = new Omm(OMMXML, IERSConventions.IERS_2010, );
-    	omm.generateTLE();
+    	//Omm omm = new Omm(OMMXML, IERSConventions.IERS_2010, null);
+    	//omm.generateTLE();
     	
     	
     	
